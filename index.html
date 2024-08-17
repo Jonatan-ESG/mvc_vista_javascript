@@ -25,7 +25,7 @@
                 <h2>Ingresa tu operación</h2>
             </div>
             <div class="card-body">
-                <form id="formularioOperacion">
+                <form id="formularioOperacion" onsubmit="return false">
                     <div class="mb-3">
                         <label for="primerNumero" class="form-label">Primer Número</label>
                         <input type="number" class="form-control" id="primerNumero" placeholder="Ingresa el número que desees" />
@@ -42,10 +42,10 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary" id="botonRealizarOperacion" onclick="clickBoton()">Realizar Operación</button>
+                        <button class="btn btn-primary" id="botonRealizarOperacion">Realizar Operación</button>
                     </div>
                     <div class="mb-3">
-                        <p>El resultado de la operacion es: <span id="resultado"></span></p>
+                        <p>El resultado de la operacion es: <strong id="resultado"></strong></p>
                     </div>
                 </form>
             </div>

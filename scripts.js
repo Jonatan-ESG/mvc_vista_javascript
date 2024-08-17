@@ -1,9 +1,26 @@
 // const formulario = document
-function clickBoton() {
-    alert('El botón fue clickeado, disparado desde HTML')
-}
+
 const botonRealizarOperacion = document.getElementById('botonRealizarOperacion')
 
-botonRealizarOperacion.addEventListener('click', () => {
-    alert('El botón fue clickeado, disparado desde el EventListener')
-})
+botonRealizarOperacion.addEventListener('click', realizarOperacion)
+
+function realizarOperacion() {
+    const primerNumero = parseInt(document.getElementById('primerNumero').value)
+    const segundoNumero = parseInt(document.getElementById('segundoNumero').value)
+
+    const selectorOperacion = document.getElementById('selectorOperacion')
+    const operacionSeleccionada = selectorOperacion.options[selectorOperacion.options.selectedIndex].value
+
+    let resultado = 0
+
+    switch (operacionSeleccionada) {
+        case 'RESTA':
+            resultado = primerNumero - segundoNumero
+            break
+        case 'SUMA':
+            resultado = primerNumero + segundoNumero
+            break
+    }
+
+    document.getElementById('resultado').innerHTML = resultado
+}
